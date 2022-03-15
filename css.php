@@ -1,7 +1,14 @@
 <?php header("content-type: text/css"); ?>
 /*<style type="text/css">/**/
 
+:root{
+    --primary: green;
+    --optional: orange;
+}
 
+html{
+    background-color: var(--primary);
+}
 body{
 	/*background: #212529;*/
 	margin: 0;
@@ -11,6 +18,7 @@ body{
 	font-size: 14px;
 	user-select: none;
 	max-width: calc(100vw - 10px);
+    background: url('cdn/jhiliks.webp');
 }
 select:hover{
 	background: white !important;
@@ -59,17 +67,19 @@ input {
 	padding: 4px 8px;
 }
 *{
-	font-family: Raleway,sans-serif;
-	user-select:  none;
+	/* font-family: Raleway,sans-serif; */
+	user-select:  text;
 	pointer-events: auto;
 	transition: all 0.15s ease-in-out;
 	box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 img{
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+    pointer-events: none;
 }
 .data-loader {
 	background: white;height: 1px;width: 100%;max-width: 100vw;
@@ -107,6 +117,10 @@ img{
 }
 .parallax-mirror *{
     transition: none;
+}
+.parallax-window-inset{
+    position: relative;
+    z-index: 2;
 }
 
 /* error style */
@@ -411,3 +425,77 @@ hr{
 
 
 /*****************************************************************************************/
+
+
+#top_menu_bar{
+    background: var(--optional);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+#top_menu_bar *{
+    user-select: none;
+}
+#top_menu_bar .menus{
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#top_menu_bar .menus .item{
+    text-decoration: none;
+    color: white;
+    line-height: 75px;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: sans-serif;
+}
+#top_menu_bar .menus .item:hover{
+    text-decoration: underline;
+    background-color: #00000017;
+}
+
+
+#welcome-screen {
+    height: 100%;
+    font-family: Raleway,sans-serif;
+}
+#welcome-screen .est-date{
+    color: #fb953e;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    letter-spacing: 8px;
+    font-size: 16px;
+}
+#welcome-screen .title {
+    font-size: 102px;
+    color: white;
+    position: absolute;
+    bottom: 20%;
+    left: 15%;
+}
+#welcome-screen .sub-title {
+    font-size: 18px;
+    color: white;
+    position: absolute;
+    bottom: calc(20% + 102px);
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: 100;
+}
+#welcome-screen .address {
+    font-size: 18px;
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: 100;
+}

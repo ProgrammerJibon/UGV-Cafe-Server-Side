@@ -201,5 +201,8 @@ function info(){
     }else{
         return false;
     }
+	$result['address'] = "Krahnstrasse 22, 49074 Osnabrück";
+	$result['est'] = "2019";
+	$result['sub-title'] = "Magic of the Orient";
     return $result;
 }
