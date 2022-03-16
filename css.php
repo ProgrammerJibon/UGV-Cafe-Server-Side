@@ -2,12 +2,12 @@
 /*<style type="text/css">/**/
 
 :root{
-    --primary: green;
-    --optional: orange;
+    --primary: #ff5e00;
+    --optional: #4f0912 /*#ff5200*/;
 }
 
 html{
-    background-color: var(--primary);
+    background-color: var(--optional);
 }
 body{
 	/*background: #212529;*/
@@ -423,7 +423,6 @@ hr{
 
 
 
-
 /*****************************************************************************************/
 
 
@@ -480,7 +479,7 @@ hr{
     left: 15%;
 }
 #welcome-screen .sub-title {
-    font-size: 18px;
+    font-size: 14px;
     color: white;
     position: absolute;
     bottom: calc(20% + 102px);
@@ -490,7 +489,7 @@ hr{
     font-weight: 100;
 }
 #welcome-screen .address {
-    font-size: 18px;
+    font-size: 14px;
     color: white;
     position: absolute;
     bottom: 5%;
@@ -498,4 +497,174 @@ hr{
     right: 0;
     text-align: center;
     font-weight: 100;
+}
+
+#scroll_to_top_arrow_btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 99;
+    display: block;
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--optional);
+    fill: white;
+    padding: 16px;
+}
+#scroll_to_top_arrow_btn:hover{
+    background-color: var(--primary);
+}
+
+
+#top-categories .block{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 64px 0 ;
+}
+#top-categories .block .item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+#top-categories .block .item .block-item{
+    padding: 16px;
+    flex: 0 0 50%;
+}
+#top-categories .block .item .block-item img{
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+}
+#top-categories .block .item .block-item .head{
+    color: var(--primary);
+    font-family: Raleway,sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+#top-categories .block .item .block-item .title{
+    font-size: 30px;
+    font-family: cursive;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    padding: 16px 0;
+    display: block;
+    color: white;
+}
+#top-categories .block .item .block-item .desc{
+    color: var(--primary);
+    letter-spacing: 1px;
+    font-family: Raleway,sans-serif;
+}
+
+
+#about-us{
+    padding: 64px 0 ;
+}
+#about-us .header {
+    text-align: center;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 8px;
+}
+#about-us .title {
+    text-align: center;
+    color: white;
+    text-transform: lowercase;
+    font-size: 32px;
+    letter-spacing: 4px;
+    padding: 32px 0 64px 0;
+    font-family: monospace;
+}
+#about-us .desc {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 64px 0;
+    color: var(--primary);
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+
+
+#contact-us{
+    padding: 32px 0;
+}
+#contact-us .block{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+#contact-us .block .flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+#contact-us .block .item {
+    flex: 0 0 50%;
+    min-width: fit-content;
+}
+#contact-us .block .item .contact-header {
+    font-size: 25px;
+    color: white;
+    padding-bottom: 100px;
+    font-family: cursive;
+    letter-spacing: 4px;
+}
+#contact-us .block .item .contact-desc{
+    color: var(--primary);
+}
+#contact-us .block .item .contact-desc .contact-mel {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    padding: 8px 0;
+}
+#contact-us .block .item .contact-desc .contact-mel .fas{
+    padding-right: 8px;
+}
+
+
+
+
+
+
+
+
+#contact-us .block #book-table.item{
+    padding-top: 8px;
+}
+#contact-us .block #book-table.item .book-title {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 4px;
+    padding-bottom: 32px;
+}
+#contact-us .block #book-table.item input, #contact-us .block #book-table.item select, #contact-us .block #book-table.item button {
+    width: 300px;
+    margin: 8px 0;
+    height: 40px;
+    background: transparent;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+    padding: 0 32px;
+}
+#contact-us .block #book-table.item input:hover, #contact-us .block #book-table.item select:hover, #contact-us .block #book-table.item input:focus, #contact-us .block #book-table.item select:focus{
+    background: #ffffff2b !important;
+}
+#contact-us .block #book-table.item button {
+    background: var(--primary);
+    color: var(--optional);
+    cursor: pointer;
+}
+#contact-us .block #book-table.item button:hover{
+    border: 1.5px solid var(--optional);
+    color: white;
+    transition: none;
 }

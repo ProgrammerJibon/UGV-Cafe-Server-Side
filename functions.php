@@ -1,4 +1,5 @@
 <?php 
+date_default_timezone_set("Europe/Berlin");
 $time = time();
 session_start();
 $connect = connect();
@@ -204,5 +205,8 @@ function info(){
 	$result['address'] = "Krahnstrasse 22, 49074 Osnabrück";
 	$result['est'] = "2019";
 	$result['sub-title'] = "Magic of the Orient";
+	$result['address'] = "Krahnstrasse 22\r\n49074 Osnabrück";
+	$result['phone'] = "+49XXXXXXXXX";
+	$result['email'] = "example@gmail.com";
     return $result;
 }
