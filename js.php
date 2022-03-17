@@ -373,3 +373,11 @@ if (imageLinks.length == 1) {
 
 	startSlide();
 }
+function window_onload(){
+	var move_bg_position_body = 1;
+	document.querySelector("body").style.backgroundPosition = `${move_bg_position_body}px ${move_bg_position_body/2}px`;
+	setInterval(() => {
+		document.querySelector("body").style.backgroundPosition = `${move_bg_position_body}px ${move_bg_position_body/2}px`;
+		move_bg_position_body+=10;
+	}, 1000);
+}

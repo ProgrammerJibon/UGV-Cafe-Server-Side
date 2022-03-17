@@ -3,7 +3,8 @@
 
 :root{
     --primary: #ff5e00;
-    --optional: #4f0912 /*#ff5200*/;
+    --optional: #2c0006/*#4f0912 #ff5200*/;
+    --optional-2: #160003;
 }
 
 html{
@@ -19,6 +20,10 @@ body{
 	user-select: none;
 	max-width: calc(100vw - 10px);
     background: url('cdn/jhiliks.webp');
+    background-attachment: fixed;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    transition: background 1s linear;
 }
 select:hover{
 	background: white !important;
@@ -434,6 +439,8 @@ hr{
     position: sticky;
     top: 0;
     z-index: 999;
+    box-shadow: 0 0 15px -5px var(--optional-2);
+    border: 1px solid #16000347;
 }
 #top_menu_bar *{
     user-select: none;
@@ -470,6 +477,7 @@ hr{
     position: absolute;
     top: 50px;
     left: 50%;
+    right: 0;
     transform: translate(-50%);
     letter-spacing: 8px;
     font-size: 16px;
@@ -480,6 +488,7 @@ hr{
     position: absolute;
     bottom: 20%;
     left: 15%;
+    right: 0;
 }
 #welcome-screen .sub-title {
     font-size: 14px;
@@ -686,7 +695,12 @@ label span{
 
 
 .block-home-footer{
-    margin-top: 50px;
+    padding-top: 50px;
+    background-color: var(--optional-2);
+    background-image: url(cdn/jhiliks.webp);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: repeat;
 }
 .block-home-footer .block{
     max-width: 1000px;
@@ -698,7 +712,9 @@ label span{
     align-items: center;
     justify-content: space-between;
     align-content: center;
-    margin: 100px 0;
+}
+.block-home-footer .block .flex.footer-flex{
+    padding: 100px 0;
 }
 .block-home-footer .block .flex .left .join-email-title{
     color: white;
@@ -716,4 +732,80 @@ label span{
 }
 .block-home-footer .block .flex .right .copyright{
     padding: 8px 0;
+}
+.block-home-footer .block .social-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+}
+.block-home-footer .block .social-icons .social-icon a{
+    padding: 8px;
+    font-size: 25px;
+    display: inline-block;
+    color: white;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px){
+    #welcome-screen .title{
+        font-size: 40px;
+        left: 0;
+        text-align: center;
+    }
+    #welcome-screen .sub-title{
+        bottom: calc(20% - 40px);
+        left: 0;
+        text-align: center;
+    }
+    #top-categories .block .item .block-item{
+        padding: 16px;
+        flex: 0 0 100%;
+    }
+    #top-categories .block .item .block-item img{
+        width: 100%;
+    }
+    #about-us .desc{
+        padding: 64px 16px;
+    }
+    #contact-us{
+        padding: 32px 16px 64px 16px;
+    }
+    #contact-us .block .flex {
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #contact-us .block .item .contact-desc .contact-mel{
+        justify-content: center;
+    }
+    .block-home-footer .block .flex.footer-flex{
+        padding: 100px 16px;
+    }
+    .block-home-footer .block .flex .right{
+        text-align: center;
+        width: 100%;
+    }
+    #top_menu_bar .show-menu{
+        display: flex !important;
+        align-content: center;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+    }
+    #top_menu_bar .menus{
+        flex-direction: column;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    #top_menu_bar .show-menu .toggle-menu button{
+        width: max-content;
+    }
 }

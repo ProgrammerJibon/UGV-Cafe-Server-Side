@@ -208,5 +208,8 @@ function info(){
 	$result['address'] = "Krahnstrasse 22\r\n49074 Osnabrück";
 	$result['phone'] = "+49XXXXXXXXX";
 	$result['email'] = "example@gmail.com";
+	$result['instagram'] = "//instagram.com";
+	$result['facebook'] = "//facebook.com";
+	$result['twitter'] = "//twitter.com";
     return $result;
 }

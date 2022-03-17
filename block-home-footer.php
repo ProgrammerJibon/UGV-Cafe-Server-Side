@@ -1,6 +1,6 @@
 <div class="block-home-footer">
     <div class="block">
-        <div class="flex">
+        <div class="flex footer-flex">
             <div class="left">
                 <div class="join-email-title">
                     <span>
@@ -23,7 +23,29 @@
             </div>
             <div class="right">
                 <div class="social-icons">
-
+                    <div class="social-icons">
+                        <div class="social-icon">
+                            <a target="_blank" href="<?php echo $info['facebook'];?>">
+                                <span>
+                                    <i class="fab fa-facebook"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a target="_blank" href="<?php echo $info['twitter'];?>">
+                                <span>
+                                    <i class="fab fa-twitter"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a target="_blank" href="<?php echo $info['instagram'];?>">
+                                <span>
+                                    <i class="fab fa-instagram"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="copyright">
                     <div><?php echo $info['title']; ?> &copy; 2021-<?php echo date('Y'); ?></div>

@@ -16,4 +16,12 @@
             <span>book a table</span>
         </a>
     </div>
+    <div class="show-menu" style="display: none;">
+        <div class="logo">
+            <span>LOGO</span>
+        </div>
+        <div class="toggle-menu">
+            <button>+</button>
+        </div>
+    </div>
 </div>
