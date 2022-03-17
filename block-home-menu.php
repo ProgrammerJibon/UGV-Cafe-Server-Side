@@ -9,9 +9,6 @@
         <a class="item" href="#about-us">
             <span>about us</span>
         </a>
-        <a class="item" href="#reservation">
-            <span>reservation</span>
-        </a>
         <a class="item" href="#contact-us">
             <span>contact us</span>
         </a>

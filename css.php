@@ -50,6 +50,9 @@ textarea{
 textarea:focus{
 	box-shadow: none !important;
 }
+a{
+    color: unset;
+}
 ::-webkit-scrollbar {
   width: 10px;
   cursor: pointer;
@@ -646,7 +649,7 @@ hr{
     letter-spacing: 4px;
     padding-bottom: 32px;
 }
-#contact-us .block #book-table.item input, #contact-us .block #book-table.item select, #contact-us .block #book-table.item button {
+input, select, button {
     width: 300px;
     margin: 8px 0;
     height: 40px;
@@ -654,17 +657,63 @@ hr{
     color: var(--primary);
     border: 1.5px solid var(--primary);
     padding: 0 32px;
+    color-scheme: dark;
 }
-#contact-us .block #book-table.item input:hover, #contact-us .block #book-table.item select:hover, #contact-us .block #book-table.item input:focus, #contact-us .block #book-table.item select:focus{
+input:hover, select:hover, input:focus, select:focus{
     background: #ffffff2b !important;
 }
-#contact-us .block #book-table.item button {
+button {
     background: var(--primary);
     color: var(--optional);
     cursor: pointer;
 }
-#contact-us .block #book-table.item button:hover{
+button:hover{
     border: 1.5px solid var(--optional);
     color: white;
     transition: none;
+}
+label span{
+    color: white;
+    padding-top: 32px;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+.block-home-footer{
+    margin-top: 50px;
+}
+.block-home-footer .block{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.block-home-footer .block .flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    margin: 100px 0;
+}
+.block-home-footer .block .flex .left .join-email-title{
+    color: white;
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+.block-home-footer .block .flex .right{
+    text-align: right;
+}
+.block-home-footer .block .flex .right{
+    color: var(--primary);
+}
+.block-home-footer .block .flex .right a{
+    font-weight: bold;
+}
+.block-home-footer .block .flex .right .copyright{
+    padding: 8px 0;
 }
