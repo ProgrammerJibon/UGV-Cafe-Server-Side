@@ -594,7 +594,7 @@ hr{
 
 
 #contact-us{
-    padding: 32px 0;
+    padding: 32px 0 64px 0;
 }
 #contact-us .block{
     max-width: 1000px;

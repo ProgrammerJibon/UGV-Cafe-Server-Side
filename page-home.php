@@ -9,6 +9,6 @@ require_once('block-home-menu.php');
 require_once('block-home-banner.php');
 require_once('block-home-top-post.php');
 require_once('block-home-about-us.php');
-require_once('block-home-contact-us.php');
+require_once('block-home-contact-us-and-book-table.php');
 require_once('block-home-map.php');
 require 'page-footer.php';

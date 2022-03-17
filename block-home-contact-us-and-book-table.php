@@ -41,10 +41,10 @@
                 <div>
                     <form action="/save" method="POST">
                         <div>
-                            <input type="date" name="book-date">
+                            <input type="date" value="<?php echo date('Y-m-d'); ?>" name="book-date">
                         </div>
                         <div>
-                            <input type="time" name="book-time">
+                            <input type="time" value="<?php echo date('h:i'); ?>" name="book-time">
                         </div>
                         <select name="book-table-number">
                             <option value="1">1</option>
