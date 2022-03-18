@@ -752,7 +752,6 @@ label span{
 
 
 
-
 @media screen and (max-width: 1000px){
     #welcome-screen .title{
         font-size: 40px;
@@ -760,7 +759,7 @@ label span{
         text-align: center;
     }
     #welcome-screen .sub-title{
-        bottom: calc(20% - 40px);
+        bottom: calc(20% - 20px);
         left: 0;
         text-align: center;
     }
@@ -807,5 +806,30 @@ label span{
     }
     #top_menu_bar .show-menu .toggle-menu button{
         width: max-content;
+        background: var(--optional-2);
+        box-shadow: 0 0 8px -2px #ff000d;
+        border: 1px solid #ff000d;
+        color: #ff000d;
+    }
+    #top_menu_bar .menus .item{
+        border-bottom: 1px solid #340007;
+        border-top: 1px solid #340007;
+    } 
+    .max-vh{
+        max-height: 100vh !important;
+    }
+    #top_menu_bar .show-menu .logo{
+        width: 80px;
+    }
+    .parallax-window{
+        width: 100vw;
+        height: calc(100vw*(9/16)) !important;
+    }
+    .parallax-window .parallax-window-inset{
+        width: 100vw;
+        height: calc(100vw*(9/16)) !important;
+    }
+    .block-home-footer .block .social-icons {
+        justify-content: center;
     }
 }
