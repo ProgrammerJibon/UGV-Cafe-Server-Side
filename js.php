@@ -473,6 +473,9 @@ function checkPathName(path){
 							all_menu_items.classList.add("menus_column");
 							var menu_categories_name = document.createElement("div");
 							menu_categories_name.classList.add("menu_categories_name");
+
+							menu_categories_name.innerHTML = cat_item.name;
+
 							menu_items.forEach((item, pos)=>{
 								if(item.menu_cats_id == cat_item.id){
 									var new_menu_item = document.createElement("div");
@@ -499,7 +502,7 @@ function checkPathName(path){
 									new_menu_item_price_div.innerHTML = item.price;
 
 									var new_menu_item_comment_div = document.createElement('div');
-									new_menu_item_comment_div.classList.add("menu_item_price");
+									new_menu_item_comment_div.classList.add("menu_item_comment");
 									new_menu_item_comment_div.innerHTML = item.comment;
 
 									new_menu_item_name_price.appendChild(new_menu_item_name_div);

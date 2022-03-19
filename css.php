@@ -754,9 +754,11 @@ label span{
 div#menus {
     max-width: 1000px;
     margin: 0 auto;
+    overflow: hidden;
 }
 div#menus .menus-container{
     padding: 0 16px;
+    overflow: hidden;
 }
 div#menus .menus-container .menu_categories_name{
     color: var(--primary);
@@ -766,6 +768,64 @@ div#menus .menus-container .menu_categories_name{
     border-top: 1px solid var(--primary);
     margin: 32px 0;
     text-transform: capitalize;
+}
+div#menus .menus-container .menus_column{
+    padding: 16px 0;
+    overflow: hidden;
+}
+div#menus .menus-container .menus_column .menus_row{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: row;
+}
+div#menus .menus-container .menus_column .menus_row .menu_item_img{
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+}
+div#menus .menus-container .menus_column .menus_row .menu_item_details{
+    padding-left: 16px;
+    color: var(--primary);
+    width: 100%;
+    overflow: hidden;
+}
+div#menus .menus-container .menus_column .menus_row .menu_item_details .menu_item_name_price{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+div#menus .menus-container .menus_column .menus_row .menu_item_details .menu_item_name_price .menu_item_name{
+    font-size: 16px;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+div#menus .menus-container .menus_column .menus_row .menu_item_details .menu_item_name_price .menu_item_name:after{
+    content: "..................................................................................................................................................................";
+    position: absolute;
+    letter-spacing: 4px;
+    padding-left: 8px;
+    z-index: -1;
+}
+div#menus .menus-container .menus_column .menus_row .menu_item_details .menu_item_name_price .menu_item_price{
+    background: var(--optional);
+    padding: 0px 8px 0 16px;
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+}
+div#menus .menus-container .menus_column .menus_row .menu_item_details .menu_item_name_price .menu_item_price:after{
+    content: "€";
+    font-size: 25px;
+    padding-left: 8px;
+}
+div#menus .menus-container .menus_column .menus_row .menu_item_details .menu_item_comment {
+    color: var(--primary);
+    opacity: 0.5;
 }
 
 
