@@ -6,6 +6,28 @@ function viewRemove(div) {
 	div.classList.remove("show")
 }
 
+
+function href(link){
+	if (link != null) {
+		window.location.href = link;
+	}	
+}
+
+
+function change_text_settings(input, result, which, is_pass){
+	result = document.querySelector(result);
+	result.innerHTML = "Please wait while changing...";
+	input.disabled = true;
+	input.style = "border:1px solid gray; color: gray;";
+	loadLink('/json.php', [['name', which], ['value', input.value], ['is_pass', is_pass],['change_text_settings','true']]).then(db_result=>{
+		result.innerHTML = db_result.settings_changed;
+		setTimeout(()=>{
+			input.disabled = false;
+			input.style = "";
+		}, 3000)
+	});
+}
+
 function rgba(r, g, b, a){
 	if (r < 0 || r > 255) {
 		r = 0;
@@ -440,8 +462,8 @@ function setState(link, title){
 	if(title){
 		document.querySelectorAll("title").forEach(item=>{
 			if (data.title) {
-				if (data.title != name) {
-					item.innerHTML = name.toUpperCase()+" - "+data.title;
+				if (data.title != "") {
+					item.innerHTML = data.title;
 					item.title = data.title;				
 				}			
 			}

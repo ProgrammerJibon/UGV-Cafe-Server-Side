@@ -420,12 +420,120 @@ hr{
     color: #fff;
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #fba500, 0 0 82px #fba500, 0 0 92px #fba500, 0 0 102px #fba500, 0 0 151px #fba500;
 }
+.floating .float-button{
+	color:#FFF !important;
+	font-size: 30px;
+}
+.floating{
+	position:fixed;
+	width: 60px;
+	height: 60px;
+	bottom:10%;
+	left:40px;
+	background:#25d366;
+	border-radius:50%;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	z-index:100;
+}
+
+.float-button{
+	margin-top:16px;
+}
 
 
 
 
 
 
+
+
+
+
+/*****************************************************************************************/
+
+
+.admin_page{
+	padding: 0px 32px;
+}
+.admin_page .home_page_logo img{
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+.admin_page .menu_bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    background: #fff5db;
+    margin: 0 -32px;
+    box-shadow: 5px 5px 15px -5px grey;
+}
+.admin_page .menu_bar .menu_item:hover{
+	background: #ff0052;
+    color: #ffffff;
+    border: 1px solid #ff5200;
+    border-radius: 3px;
+}
+.admin_page .menu_bar .menu_item {
+    padding: 12px 16px;
+    color: #545454;
+    font-size: 18px;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+.settings_main{
+	padding: 64px 0;
+	max-width: 500px;
+	margin: 0 auto;
+}
+.settings_main .settings_item{
+	margin: 32px 0;
+}
+.settings_main .settings_img_change{
+	max-width: 300px;
+	cursor: pointer;
+	border: 1px solid #ff0052;
+}
+.settings_main .settings_title{
+	font-size: 16px;
+	font-family: cursive;
+	color: #ff0052;
+}
+.settings_main .settings_item input.change_text {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 15px;
+    color: #ff0052;
+    border: 1px solid #ff0052;
+    border-radius: 3px;
+    margin: 8px 0;
+    background: white;
+    cursor: pointer;
+}
+
+.settings_main .settings_item input.change_text[type='submit']{
+	background: #ff0052;
+	color: white;
+}
+.settings_main .settings_item input.change_text:focus{
+	background: #ff0052;
+	color: white;
+}
+.settings_main .settings_item .result_change_text{
+	color: green;
+    height: 20px;
+    font-size: 15px;
+}
 
 
 

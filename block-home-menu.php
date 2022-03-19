@@ -10,19 +10,19 @@
         </div>
     </div>
     <div class="menus">
-        <a class="item" onclick="setState('/')">
+        <a class="item" onclick="setState('/', '<?php echo $info['title'];?>')">
             <span>welcome</span>
         </a>
-        <a class="item" onclick="setState('/menus')">
+        <a class="item" onclick="setState('/menus', 'Menus | <?php echo $info['title'];?>')">
             <span>menus</span>
         </a>
-        <a class="item" onclick="setState('/about-us')">
+        <a class="item" onclick="setState('/about-us', 'About Us | <?php echo $info['title'];?>')">
             <span>about us</span>
         </a>
-        <a class="item" onclick="setState('/contact-us')">
+        <a class="item" onclick="setState('/contact-us', 'Contact Us | <?php echo $info['title'];?>')">
             <span>contact us</span>
         </a>
-        <a class="item" onclick="setState('/book-table')">
+        <a class="item" onclick="setState('/book-table', 'Book Table | <?php echo $info['title'];?>')">
             <span>book a table</span>
         </a>
     </div>

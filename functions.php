@@ -38,6 +38,25 @@ function filter_namex($strip = null, $replace = null, $full_name = null){
     return $r;
 
 }
+
+
+function upload($tmp_file, $type = false){
+	$mime_file_type = explode("/", mime_content_type($tmp_file));
+	$result = false;
+	if($type == false || $type == $mime_file_type[0]){
+		$file_path = "uploads/".date("Y/M/");
+		if (!file_exists($file_path)) {
+			mkdir($file_path, 0777, true);
+		}
+		$file_name = $file_path.$mime_file_type[0]."-".time()."-".rand().".".$mime_file_type[1];
+		if(move_uploaded_file($tmp_file, $file_name)){
+			$result = $file_name;
+		}
+	}
+	return $result;
+}
+
+
 function sent_mail($to = null, $fname = null, $message = null, $subject = null, $reply_to_this = null){
 	$fname = ucwords(strtolower(addslashes($fname)));
 	$to = (strtolower(addslashes(strip_tags($to))));
