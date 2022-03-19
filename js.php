@@ -69,7 +69,7 @@ function loadLink(url, data){
 	return new Promise(function(resolve, reject){
 
 		var http = new XMLHttpRequest();
-		var loader = document.querySelector(".loader .loaded");
+		var loader = document.querySelector(".progressbar .progress");
 		loader.style = `width: 20%;`;
 		http.open("POST", url);
 		var formData = new FormData();
@@ -396,7 +396,7 @@ function window_onload(){
 					}else if (result_admin_pass.login){
 						ask_admin_pass(result_admin_pass.login);
 					}else{
-						ask_admin_pass("Check you connect and try again letter...");
+						ask_admin_pass("Check your connection and try again letter...");
 					}
 				})
 			}
