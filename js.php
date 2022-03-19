@@ -386,9 +386,9 @@ function window_onload(){
 			msg = msg || "Enter password";
 			var x = prompt(msg);
 			if (x == null) {
-				ask_admin_pass();
+				window.location.assign("/");
 			}else if(x == false){
-				ask_admin_pass();
+				window.location.assign("/");
 			}else{
 				loadLink('/json.php', [['admin_pass_enter', x],['bool','false']]).then(result_admin_pass=>{
 					if (result_admin_pass.login && result_admin_pass.login == "reload") {
@@ -402,7 +402,8 @@ function window_onload(){
 			}
 		}
 		if (body = document.querySelector('body')) {
-			if (body.style.background = "black") {
+			if ((body.style.background = "black") && (body.style.color = "white")) {
+				alert('Entering wrong password will make you wait 30 sec everytime');
 				ask_admin_pass();
 			}
 		}
@@ -461,7 +462,13 @@ function checkPathName(path){
 		}else if(path == "book-table"){
 			document.querySelector("div#book-table view").scrollIntoView({ behavior: 'smooth', block: 'center' });
 		}else if(path == "menus"){
-
+			if(document.querySelector("div#menus").style.display = "block"){
+				if (document.querySelector("div#menus view").scrollIntoView({ behavior: 'smooth', block: 'center' })) {
+					loadLink('/json.php', [['name','jibon'],['bool','false']]).then(result=>{
+						console.log(result)
+					})
+				}
+			}
 		}else if(path == "admin"){
 
 		}else{
