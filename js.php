@@ -374,10 +374,74 @@ if (imageLinks.length == 1) {
 	startSlide();
 }
 function window_onload(){
+	window.onpopstate();
 	var move_bg_position_body = 1;
 	document.querySelector("body").style.backgroundPosition = `${move_bg_position_body}px ${move_bg_position_body/2}px`;
 	setInterval(() => {
 		document.querySelector("body").style.backgroundPosition = `${move_bg_position_body}px ${move_bg_position_body/2}px`;
 		move_bg_position_body+=10;
 	}, 1000);
+}
+
+
+
+window.onpopstate = (e) =>{ 
+	var search = window.location.search;
+	var pathname = window.location.pathname;
+	var content = document.querySelector(".content");
+	if(document.getElementById('style1')){
+		document.getElementById('style1').remove();
+	}
+
+	pathname = pathname.split("/")[1];
+
+	console.log(pathname);
+	checkPathName(pathname);
+}
+
+
+function setState(link, title){
+	var data = [];
+	if (title != '') {
+		data.title = title;
+	}
+	window.history.pushState(link, null, link);
+	var pathname = window.location.pathname;
+	pathname = pathname.split("/")[1];
+
+
+	if(title){
+		document.querySelectorAll("title").forEach(item=>{
+			if (data.title) {
+				if (data.title != name) {
+					item.innerHTML = name.toUpperCase()+" - "+data.title;
+					item.title = data.title;				
+				}			
+			}
+		});
+	}
+	
+
+	window.onpopstate();
+}
+
+
+function checkPathName(path){
+	if(path){
+		if(path == "about-us"){
+			document.querySelector("div#about-us view").scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}else if(path == "contact-us"){
+			document.querySelector("div#contact-us view").scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}else if(path == "book-table"){
+			document.querySelector("div#book-table view").scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}else if(path == ""){
+
+		}else if(path == ""){
+
+		}else if(path == ""){
+
+		}else{
+			window.location.assign(path);
+		}
+	}
 }

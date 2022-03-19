@@ -1,6 +1,6 @@
 <div id="top_menu_bar">
     <div class="show-menu" style="display: none;">
-        <div class="logo" onclick="window.location.reload()">
+        <div class="logo" onclick="setState('/')">
             <img src="<?php echo $info['logo'];?>" alt="Official Logo">
         </div>
         <div class="toggle-menu">
@@ -10,19 +10,19 @@
         </div>
     </div>
     <div class="menus">
-        <a class="item" href="#top">
+        <a class="item" onclick="setState('/')">
             <span>welcome</span>
         </a>
-        <a class="item" href="#menus">
+        <a class="item" onclick="setState('/menus')">
             <span>menus</span>
         </a>
-        <a class="item" href="#about-us">
+        <a class="item" onclick="setState('/about-us')">
             <span>about us</span>
         </a>
-        <a class="item" href="#contact-us">
+        <a class="item" onclick="setState('/contact-us')">
             <span>contact us</span>
         </a>
-        <a class="item" href="#book-table">
+        <a class="item" onclick="setState('/book-table')">
             <span>book a table</span>
         </a>
     </div>

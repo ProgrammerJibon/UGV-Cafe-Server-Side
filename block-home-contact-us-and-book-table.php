@@ -1,4 +1,5 @@
 <div id="contact-us">
+    <view></view>
     <div class="block">
         <div class="flex">
             <div class="item">
@@ -35,6 +36,7 @@
                 </div>
             </div>
             <div class="item" id="book-table">
+                <view></view>
                 <div class="book-title">
                     <span>BOOK A TABLE</span>
                 </div>

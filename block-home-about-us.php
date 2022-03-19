@@ -1,4 +1,5 @@
 <div id="about-us">
+    <view></view>
     <div class="header">
         <span>ABOUT US</span>
     </div>
