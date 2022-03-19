@@ -463,11 +463,10 @@ function checkPathName(path){
 			document.querySelector("div#book-table view").scrollIntoView({ behavior: 'smooth', block: 'center' });
 		}else if(path == "menus"){
 			if(document.querySelector("div#menus").style.display = "block"){
-				if (document.querySelector("div#menus view").scrollIntoView({ behavior: 'smooth', block: 'center' })) {
-					loadLink('/json.php', [['name','jibon'],['bool','false']]).then(result=>{
-						console.log(result)
-					})
-				}
+				document.querySelector("div#menus view").scrollIntoView({ behavior: 'smooth', block: 'center' })
+				loadLink('/json.php', [['menus','block-home'],['bool','false']]).then(result=>{
+					console.log(result)
+				})
 			}
 		}else if(path == "admin"){
 

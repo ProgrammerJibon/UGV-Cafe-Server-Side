@@ -12,4 +12,20 @@ if(isset($_POST['admin_pass_enter']) && $admin_pass_enter = $_POST['admin_pass_e
     }
 }
 
+
+if(isset($_POST['menus'])){
+    $result['menu_cats'] = array();
+    if($menu_cat = mysqli_query($connect, "SELECT * FROM `menu_cats` ORDER BY `menu_cats`.`id` DESC")){
+        foreach($menu_cat as $key){
+            $result['menu_cats'][] = $key;
+        }
+    }
+    $result['menu_items'] = array();
+    if($menu_cat = mysqli_query($connect, "SELECT * FROM `menu_items` ORDER BY `menu_items`.`id` DESC")){
+        foreach($menu_cat as $key){
+            $result['menu_items'][] = $key;
+        }
+    }
+}
+
 echo json_encode($result);
