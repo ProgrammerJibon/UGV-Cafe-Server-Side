@@ -381,6 +381,32 @@ function window_onload(){
 		document.querySelector("body").style.backgroundPosition = `${move_bg_position_body}px ${move_bg_position_body/2}px`;
 		move_bg_position_body+=10;
 	}, 1000);
+	if (document.querySelector('div.require_pass')) {
+		function ask_admin_pass(msg){
+			msg = msg || "Enter password";
+			var x = prompt(msg);
+			if (x == null) {
+				ask_admin_pass();
+			}else if(x == false){
+				ask_admin_pass();
+			}else{
+				loadLink('/json.php', [['admin_pass_enter', x],['bool','false']]).then(result_admin_pass=>{
+					if (result_admin_pass.login && result_admin_pass.login == "reload") {
+						window.location.reload();
+					}else if (result_admin_pass.login){
+						ask_admin_pass(result_admin_pass.login);
+					}else{
+						ask_admin_pass("Check you connect and try again letter...");
+					}
+				})
+			}
+		}
+		if (body = document.querySelector('body')) {
+			if (body.style.background = "black") {
+				ask_admin_pass();
+			}
+		}
+	}
 }
 
 
@@ -434,9 +460,9 @@ function checkPathName(path){
 			document.querySelector("div#contact-us view").scrollIntoView({ behavior: 'smooth', block: 'center' });
 		}else if(path == "book-table"){
 			document.querySelector("div#book-table view").scrollIntoView({ behavior: 'smooth', block: 'center' });
-		}else if(path == ""){
+		}else if(path == "menus"){
 
-		}else if(path == ""){
+		}else if(path == "admin"){
 
 		}else{
 			window.location.assign(path);
