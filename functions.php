@@ -193,23 +193,14 @@ function times($ss) {
 function info(){
     $result = array();
     global $connect;
-    $sql = "SELECT * FROM `info` ORDER BY `info`.`id` DESC LIMIT 1";
+    $sql = "SELECT * FROM `info` ORDER BY `info`.`id` DESC";
     $query = mysqli_query($connect, $sql);
     if($query){
         foreach($query as $details){
-            $result = $details;
+            $result[$details['name']] = $details['value'];
         }
     }else{
         return false;
     }
-	$result['address'] = "Krahnstrasse 22, 49074 Osnabrück";
-	$result['est'] = "2019";
-	$result['sub-title'] = "Magic of the Orient";
-	$result['address'] = "Krahnstrasse 22\r\n49074 Osnabrück";
-	$result['phone'] = "+49XXXXXXXXX";
-	$result['email'] = "example@gmail.com";
-	$result['instagram'] = "//instagram.com";
-	$result['facebook'] = "//facebook.com";
-	$result['twitter'] = "//twitter.com";
     return $result;
 }

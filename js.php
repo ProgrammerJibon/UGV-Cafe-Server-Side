@@ -438,10 +438,10 @@ function checkPathName(path){
 
 		}else if(path == ""){
 
-		}else if(path == ""){
-
 		}else{
 			window.location.assign(path);
 		}
+	}else if(path == ""){
+		document.querySelector("div#top").scrollIntoView({ behavior: 'smooth', block: 'center' });
 	}
 }

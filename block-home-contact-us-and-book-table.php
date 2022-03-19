@@ -23,15 +23,15 @@
                     <br>
                     <div class="contact-mel">
                         <i class="fas fa-phone"></i> 
-                        <span style="user-select: all; text-decoration: underline;">
+                        <a href="tel:<?php echo $info['phone'];?>" target="_blank" style="user-select: all; text-decoration: underline;">
                             <?php echo $info['phone'];?>
-                        </span>
+                        </a>
                     </div>
                     <div class="contact-mel">
                         <i class="fas fa-envelope"></i>
-                        <span style="user-select: all; text-decoration: underline;">
+                        <a href="mailto:<?php echo $info['email'];?>" target="_blank" style="user-select: all; text-decoration: underline;">
                             <?php echo $info['email'];?>
-                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
