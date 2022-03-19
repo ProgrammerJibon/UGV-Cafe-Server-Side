@@ -87,7 +87,7 @@ function notification(text, color){
 }
 
 function loadLink(url, data){
-	// loadLink('/pages.php', [['name','jibon'],['bool','false']]).then(result=>{console.log(result)})
+	// loadLink('/json.php', [['name','jibon'],['bool','false']]).then(result=>{console.log(result)})
 	return new Promise(function(resolve, reject){
 
 		var http = new XMLHttpRequest();
@@ -558,4 +558,11 @@ function checkPathName(path){
 	}else if(path == ""){
 		document.querySelector("div#top").scrollIntoView({ behavior: 'smooth', block: 'center' });
 	}
+}
+
+
+function newsletterSubscription1(input, button){
+	loadLink('/json.php', [['newsletter_subscription',input.value],['bool','false']]).then(result=>{
+		button.innerHTML = result.newsletter_subscription;
+	});
 }

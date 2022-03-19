@@ -12,9 +12,9 @@
                         <span>
                             Enter you email
                         </span>
-                        <form method="POST">
-                            <input type="email" name="news-letter-subscription" placeholder="Email address" required style="padding-left: 8px;">
-                            <button style="width: max-content;">
+                        <form method="POST" onsubmit="return false">
+                            <input type="email" name="newsletter_subscription" placeholder="Email address" required style="padding-left: 8px;" id="newsletter_subscription">
+                            <button style="width: max-content;" onclick="newsletterSubscription1(document.querySelector('input#newsletter_subscription'), this)">
                                 <div>Subscribe</div>
                             </button>
                         </form>

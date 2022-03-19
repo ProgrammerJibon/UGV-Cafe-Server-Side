@@ -55,7 +55,15 @@ if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == "45646546545sd4
 
 
 
-
+if(isset($_POST['newsletter_subscription'])){
+    if(mysqli_num_rows(mysqli_query($connect, "SELECT * FROM `subscribed` WHERE `email` LIKE '$_POST[newsletter_subscription]'")) == 0){
+        if(mysqli_query($connect, "INSERT INTO `subscribed` (`id`, `email`, `ip`, `time`) VALUES (NULL, '$_POST[newsletter_subscription]', '$ip', '$time')")){
+            $result['newsletter_subscription'] = "Succesfully subscribed!";
+        }
+    }else{
+        $result['newsletter_subscription'] = "Already Subscribed!";
+    }
+}
 
 if(isset($_POST['admin_pass_enter']) && $admin_pass_enter = $_POST['admin_pass_enter']){
     if($info['password'] == md5($admin_pass_enter)){

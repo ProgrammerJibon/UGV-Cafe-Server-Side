@@ -56,6 +56,26 @@ if (!isset($result)) {
 		</div>
 		<div class="changing_site_title result_change_text"></div>
 	</div>
+	
+	<div class="settings_item">
+		<div class="settings_title">
+			Change Website sub title:
+		</div>
+		<div>
+			<input type="text" onchange="change_text_settings(this, 'div.sub-title', 'sub-title')" class="change_text" value="<?php echo $result['sub-title']; ?>">
+		</div>
+		<div class="sub-title result_change_text"></div>
+	</div>
+	
+	<div class="settings_item">
+		<div class="settings_title">
+			Change Resturant Est. year:
+		</div>
+		<div>
+			<input type="text" onchange="change_text_settings(this, 'div.est', 'est')" class="change_text" value="<?php echo $result['est']; ?>">
+		</div>
+		<div class="est result_change_text"></div>
+	</div>
 	<div class="settings_item">
 		<div class="settings_title">
 			Change Phone Number:

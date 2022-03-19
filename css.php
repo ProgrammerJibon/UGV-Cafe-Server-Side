@@ -452,7 +452,27 @@ hr{
 
 /*****************************************************************************************/
 
-
+table{
+	overflow-x: hidden;
+	width: 100%;
+	margin: 64px 0;
+}
+table tr{
+	background: #ffd9d9;
+}
+table tr td{
+	padding: 16px;
+}
+table thead tr th{
+	padding: 16px;
+}
+table thead tr{
+	background: #ff7b7b;
+    color: white;
+}
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 .admin_page{
 	padding: 0px 32px;
 }
