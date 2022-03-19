@@ -751,6 +751,28 @@ label span{
 
 
 
+div#menus {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+div#menus .menus-container{
+    padding: 0 16px;
+}
+div#menus .menus-container .menu_categories_name{
+    color: var(--primary);
+    font-size: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--primary);
+    border-top: 1px solid var(--primary);
+    margin: 32px 0;
+    text-transform: capitalize;
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 1000px){
     #welcome-screen .title{

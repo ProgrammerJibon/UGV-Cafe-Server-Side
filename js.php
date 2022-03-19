@@ -465,7 +465,64 @@ function checkPathName(path){
 			if(document.querySelector("div#menus").style.display = "block"){
 				document.querySelector("div#menus view").scrollIntoView({ behavior: 'smooth', block: 'center' })
 				loadLink('/json.php', [['menus','block-home'],['bool','false']]).then(result=>{
-					console.log(result)
+					if((menu_items = result.menu_items) && (menu_cats = result.menu_cats) && (main_menus_div = document.querySelector("#menus .menus-container"))){
+						var menu_categories = document.createElement("div");
+						menu_categories.classList.add("menu_categories");
+						menu_cats.forEach((cat_item, cat_pos)=>{
+							var all_menu_items = document.createElement("div");
+							all_menu_items.classList.add("menus_column");
+							var menu_categories_name = document.createElement("div");
+							menu_categories_name.classList.add("menu_categories_name");
+							menu_items.forEach((item, pos)=>{
+								if(item.menu_cats_id == cat_item.id){
+									var new_menu_item = document.createElement("div");
+									new_menu_item.classList.add("menus_row");
+
+									var new_menu_item_details = document.createElement("div");
+									new_menu_item_details.classList.add("menu_item_details");
+
+									var new_menu_item_name_price = document.createElement("div");
+									new_menu_item_name_price.classList.add("menu_item_name_price");
+
+									var new_menu_item_img_div = document.createElement("div");
+									new_menu_item_img_div.classList.add("menu_item_img");
+									var new_menu_item_img = document.createElement("img");
+									new_menu_item_img.src = item.pic;
+									new_menu_item_img_div.appendChild(new_menu_item_img);
+
+									var new_menu_item_name_div = document.createElement('div');
+									new_menu_item_name_div.classList.add('menu_item_name');
+									new_menu_item_name_div.innerHTML = item.name;
+
+									var new_menu_item_price_div = document.createElement('div');
+									new_menu_item_price_div.classList.add("menu_item_price");
+									new_menu_item_price_div.innerHTML = item.price;
+
+									var new_menu_item_comment_div = document.createElement('div');
+									new_menu_item_comment_div.classList.add("menu_item_price");
+									new_menu_item_comment_div.innerHTML = item.comment;
+
+									new_menu_item_name_price.appendChild(new_menu_item_name_div);
+									new_menu_item_name_price.appendChild(new_menu_item_price_div);
+
+									new_menu_item_details.appendChild(new_menu_item_name_price);
+									new_menu_item_details.appendChild(new_menu_item_comment_div);
+
+									new_menu_item.appendChild(new_menu_item_img_div);
+									new_menu_item.appendChild(new_menu_item_details);
+									
+									all_menu_items.appendChild(new_menu_item);
+								}								
+							});
+							menu_categories.appendChild(menu_categories_name);
+							menu_categories.appendChild(all_menu_items);
+						});
+						main_menus_div.innerHTML = "";
+						main_menus_div.appendChild(menu_categories);
+						$(function() {
+							$(window).trigger('resize').trigger('scroll');
+						});
+					}
 				})
 			}
 		}else if(path == "admin"){
