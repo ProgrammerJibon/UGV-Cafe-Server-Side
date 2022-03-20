@@ -30,7 +30,7 @@
                     </select>
                     <div class="menu-action-btn">
                         <button onclick="if(!confirm('Are sure to delete!')){return false;}" name="delete_menu_item" value="<?php echo $key['id']; ?>">Delete</button>
-                        <button name="update_menu_item" value="<?php echo $key['id']; ?>">Update</button>
+                        <button style="color: white;" name="update_menu_item" value="<?php echo $key['id']; ?>">Update</button>
                     </div>
                 </div>
             </div>

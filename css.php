@@ -494,7 +494,6 @@ table tr:nth-child(even) {
 .admin_page .menu_bar .menu_item:hover{
 	background: #ff0052;
     color: #ffffff;
-    border: 1px solid #ff5200;
     border-radius: 3px;
 }
 .admin_page .menu_bar .menu_item {
@@ -502,7 +501,6 @@ table tr:nth-child(even) {
     color: var(--primary);
     font-size: 18px;
     text-transform: capitalize;
-    border: 1px solid transparent;
     cursor: pointer;
     width: 100%;
     text-align: center;
