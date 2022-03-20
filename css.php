@@ -491,13 +491,8 @@ table tr:nth-child(even) {
     box-shadow: 5px 5px 15px -5px grey;
     flex-wrap: wrap;
 }
-.admin_page .menu_bar .menu_item:hover{
-	background: #ff0052;
-    color: #ffffff;
-    border-radius: 3px;
-}
 .admin_page .menu_bar .menu_item {
-    padding: 12px 16px;
+    padding: 32px 4px;
     color: var(--primary);
     font-size: 18px;
     text-transform: capitalize;
@@ -505,6 +500,21 @@ table tr:nth-child(even) {
     width: 100%;
     text-align: center;
     flex: 14.28%;
+}
+.admin_page .menu_bar .menu_item:hover{
+	background: #ff0052;
+    color: #ffffff;
+}
+.admin_page .menu_bar .menu_item[name="logout"]{
+    text-align: center !important;
+    color: white;
+    background: red;
+    border: 0;
+    margin: 0;
+}
+.admin_page .menu_bar .menu_item[name="logout"]:hover{
+    color: red;
+    background: white !important;
 }
 
 

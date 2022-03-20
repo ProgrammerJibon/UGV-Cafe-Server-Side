@@ -50,9 +50,9 @@ require_once 'page-header.php';
         <div class="menu_item"
             <?php if($_GET['p'] == 1){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=1')\"";} ?>>
             Menus</div>
-        <!-- <div class="menu_item" <?php if($_GET['p'] == 4){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=4')\"";} ?>>Posts</div> -->
-        <form class="menu_item" method="POST" style="padding: 0;"><input type="submit" class="menu_item" name="logout"
-                value="LOGOUT" style="color: white; background: red; border: 0; margin: 0;"></form>
+        <form class="menu_item" method="POST" style="padding: 0;">
+            <input type="submit" class="menu_item" name="logout" value="LOGOUT"/>
+        </form>
     </div>
     <div class="admin_settings">
         <?php 
