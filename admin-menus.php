@@ -23,13 +23,14 @@ $selected_cat_id = "";
                 }
         ?>
         <div class="admin_cat_item" id="cat_row_<?php echo($cat_item['id']);?>">
-            <input  style="flex: 80%;" type="text" id="cat_<?php echo($cat_item['id']);?>" data-id="<?php echo($cat_item['id']);?>" value="<?php echo strip_tags($cat_item['name']);?>" onclick='return true;'/>
+            <input disabled  style="flex: 80%;" type="text" id="cat_<?php echo($cat_item['id']);?>" data-id="<?php echo($cat_item['id']);?>" value="<?php echo strip_tags($cat_item['name']);?>" onclick='return true;'/>
             <button type="button" onclick='href("?p=1&cat=<?php echo($cat_item['id']);?>")'>Open</button>
             <button style="flex: 10%;" onclick="edit_cat(this, document.querySelector('input#cat_<?php echo($cat_item['id']);?>'))">Edit</button>
             <button style="flex: 10%;" onclick="del_cat(this, document.querySelector('div#cat_row_<?php echo($cat_item['id']);?>'))" data-id="<?php echo($cat_item['id']);?>">Delete</button>
         </div>
-        <?php }
-            } ?>
+        <?php 
+            }
+        ?>
     </div>
     <form action="/json.php" method="POST" enctype="multipart/form-data" class="add-menu-item">
         <h3 style="color: white;">Add menu item</h3>
@@ -54,6 +55,9 @@ $selected_cat_id = "";
         if ($selected_cat_id != '') {
             require_once "admin-menu-list.php";
         }
+    }else{
+        echo "<font color='white'>Please Add categories to add menu item...</font>";
+    }
     ?>
 </div>
 <script>

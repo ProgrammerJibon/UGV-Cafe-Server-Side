@@ -35,10 +35,6 @@ select{
 select:focus{
 	box-shadow: none !important;
 }
-input:hover{
-	background: white !important;
-	color: red !important;
-}
 input{
 	text-align: left !important;
 }
@@ -516,8 +512,11 @@ table tr:nth-child(even) {
     color: red;
     background: white !important;
 }
-
-
+input:disabled, input:disabled:hover{
+    color: gray !important;
+    border-color: gray;
+    background: transparent !important;
+}
 
 
 

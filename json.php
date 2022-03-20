@@ -32,6 +32,14 @@ if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == "45646546545sd4
         }
     }
 
+    if(isset($_POST['delete_menu_item'])){
+        if(mysqli_query($connect, "DELETE FROM `menu_items` WHERE `menu_items`.`id` = '$_POST[delete_menu_item]'")){
+            header("Location: /admin?p=1");
+        }else{
+            $result['add_menu_item']['error'] = mysqli_error($connect);
+        }
+    }
+
     if(isset($_POST['add_menu_item']) && isset($_FILES['cover'])){
         if($_FILES['cover']['size'] > 0){
             $cover_path = upload($_FILES['cover']['tmp_name'], 'image');

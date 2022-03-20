@@ -76,6 +76,7 @@ function del_cat(button, div){
         loadLink('/json.php', [['delete_cat_name', button.getAttribute('data-id')],['set', '']]).then(result=>{
             if(result.delete_cat_name == true){
                 div.remove();
+				window.location.reload();
             }else{
                 button.innerHTML = "Try again...";
                 setTimeout((e)=>{
@@ -88,6 +89,7 @@ function del_cat(button, div){
 function edit_cat(button, input){
     var input_event = input.onclick;
     var button_event = button.onclick;
+	input.disabled = false;
     input.onclick = (e)=>{};
     input.focus();
     button.innerHTML = "Save";
@@ -97,7 +99,6 @@ function edit_cat(button, input){
         button.innerHTML = "Saving...";
         loadLink('/json.php', [['edit_cat_name', input.getAttribute('data-id')],['set', input.value]]).then(result=>{
             button.disabled = false;
-            input.disabled = false;
             if(result.edit_cat_name == true){
                 button.innerHTML = "Saved";
             }else{
