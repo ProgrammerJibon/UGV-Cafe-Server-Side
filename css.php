@@ -486,7 +486,7 @@ table tr:nth-child(even) {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    background: #fff5db;
+    background: var(--optional-2);
     margin: 0 -32px;
     box-shadow: 5px 5px 15px -5px grey;
 }
@@ -498,7 +498,7 @@ table tr:nth-child(even) {
 }
 .admin_page .menu_bar .menu_item {
     padding: 12px 16px;
-    color: #545454;
+    color: var(--primary);
     font-size: 18px;
     text-transform: capitalize;
     border: 1px solid transparent;
@@ -527,7 +527,7 @@ table tr:nth-child(even) {
 .settings_main .settings_title{
 	font-size: 16px;
 	font-family: cursive;
-	color: #ff0052;
+	color: var(--primary);
 }
 .settings_main .settings_item input.change_text {
     width: 100%;
@@ -554,7 +554,13 @@ table tr:nth-child(even) {
     height: 20px;
     font-size: 15px;
 }
-
+.admin_cat_list .admin_cat_item{
+    display: flex;
+}
+.admin_cat_list .admin_cat_item input[type='text']{
+    font-size: 25px;
+    cursor: pointer;
+}
 
 
 

@@ -6,6 +6,37 @@ $result = array();
 
 
 if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == "45646546545sd45f64sa65d45ds4f564sad5f45a315sd4f564as521dc451fs5d1f564asdf564as5df15ew64r54") {
+
+
+
+    if(isset($_POST['add_cat_name'])){
+        if(strlen($_POST['add_cat_name']) > 0 && mysqli_query($connect, "INSERT INTO `menu_cats` (`id`, `name`, `pic`, `time`) VALUES (NULL, '$_POST[add_cat_name]', '', '$time')")){
+            $result['add_cat_name'] = true;
+        }else{
+            $result['add_cat_name'] = false;
+        }
+    }
+
+
+    if(isset($_POST['edit_cat_name'])){
+        if(strlen($_POST['set']) > 0 && mysqli_query($connect, "UPDATE `menu_cats` SET `name` = '$_POST[set]' WHERE `menu_cats`.`id` = '$_POST[edit_cat_name]'")){
+            $result['edit_cat_name'] = true;
+        }else{
+            $result['edit_cat_name'] = false;
+        }
+    }
+
+
+    if(isset($_POST['delete_cat_name'])){
+        if(strlen($_POST['delete_cat_name']) > 0 && mysqli_query($connect, "DELETE FROM `menu_cats` WHERE `menu_cats`.`id` = '$_POST[delete_cat_name]'")){
+            $result['delete_cat_name'] = true;
+        }else{
+            $result['delete_cat_name'] = false;
+        }
+    }
+
+
+    
     if (isset($_FILES['logo_change']['tmp_name'])) {
         if($file_name = upload($_FILES['logo_change']['tmp_name'], "image")){
             if (mysqli_query($connect, "UPDATE `info` SET `value` = '$file_name' WHERE `info`.`name` = 'logo'")) {

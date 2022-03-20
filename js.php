@@ -53,6 +53,65 @@ function byId(id){
 	}
 }
 
+function add_cat(button, input){
+    button.disabled = true;
+    button.innerHTML = "Adding...";
+    loadLink('/json.php', [['add_cat_name', input.value],['set', '']]).then(result=>{
+        if(result.add_cat_name){
+            button.innerHTML = "Please wait...";
+            window.location.reload();
+        }else{
+            button.innerHTML = "Try again...";
+            setTimeout(() => {
+                button.disabled = false;
+                button.innerHTML = "Add";
+            }, 3000);
+        }
+    })
+}
+function del_cat(button, div){
+    if(confirm("All the menu item in this categories will be removed!\nAre sure to delete?")){
+        button.innerHTML = "Deleting...";
+        button.disabled = true;
+        loadLink('/json.php', [['delete_cat_name', button.getAttribute('data-id')],['set', '']]).then(result=>{
+            if(result.delete_cat_name == true){
+                div.remove();
+            }else{
+                button.innerHTML = "Try again...";
+                setTimeout((e)=>{
+                    button.disabled = false;
+                }, 3000);
+            }
+        });
+    }    
+}
+function edit_cat(button, input){
+    var input_event = input.onclick;
+    var button_event = button.onclick;
+    input.onclick = (e)=>{};
+    input.focus();
+    button.innerHTML = "Save";
+    button.onclick=(e)=>{
+        button.disabled = true;
+        input.disabled = true;
+        button.innerHTML = "Saving...";
+        loadLink('/json.php', [['edit_cat_name', input.getAttribute('data-id')],['set', input.value]]).then(result=>{
+            button.disabled = false;
+            input.disabled = false;
+            if(result.edit_cat_name == true){
+                button.innerHTML = "Saved";
+            }else{
+                button.innerHTML = "Try again...";
+            }
+            setTimeout((e)=>{
+                button.innerHTML = "Edit";
+                button.onclick = button_event;
+                input.onclick = input_event;
+            }, 3000);
+        });
+            
+    }
+}
 function notification(text, color){
 	if (document.getElementById("event_5")) {
 		var view = document.getElementById("event_5");

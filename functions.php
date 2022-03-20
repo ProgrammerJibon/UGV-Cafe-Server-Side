@@ -15,6 +15,20 @@ function connect(){
 	return $CONNECT;
 }
 
+function to_timestamp(){
+	$d = DateTime::createFromFormat(
+		'd-m-Y H:i:s',
+		'22-09-2008 00:00:00',
+		new DateTimeZone('EST')
+	);
+	
+	if ($d === false) {
+		return false;
+	} else {
+		return $d->getTimestamp();
+	}
+	return false;
+}
 
 function get_client_ip() {
     $ipaddress = '';
