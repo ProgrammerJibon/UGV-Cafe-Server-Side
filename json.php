@@ -7,6 +7,13 @@ $result = array();
 
 if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == "45646546545sd45f64sa65d45ds4f564sad5f45a315sd4f564as521dc451fs5d1f564asdf564as5df15ew64r54") {
 
+    if(isset($_POST['delete_books'])){
+        if(mysqli_query($connect, "DELETE FROM `table_boos` WHERE `table_boos`.`id` = '$_POST[delete_books]'")){
+
+        }
+        header("Location: /admin?p=0");
+    }
+
 
     if(isset($_POST['news_letter_email'])){
         $sql_newsletter_mails = "SELECT * FROM `subscribed` ORDER BY `subscribed`.`id` DESC";

@@ -15,7 +15,7 @@ if (isset($_POST['logout'])) {
 	header("Location: /");
 }
 if (!isset($_GET['p'])) {
-	header("Location: /admin?p=3");
+	header("Location: /admin?p=0");
 }elseif ($_GET['p'] < 0 || $_GET['p'] > 5) {
 	header("HTTP/1.0 404 No settings pages founded");
 	exit();
@@ -54,6 +54,8 @@ require_once 'page-header.php';
 				require_once 'admin-newsletter-emails.php';
 			}elseif ($_GET['p'] == 1) {
 				require_once 'admin-menus.php';
+			}elseif ($_GET['p'] == 0) {
+				require_once 'admin-table-books.php';
 			}
 		 ?>
 	</div>
