@@ -7,6 +7,7 @@ $result = array();
 
 if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == "45646546545sd45f64sa65d45ds4f564sad5f45a315sd4f564as521dc451fs5d1f564asdf564as5df15ew64r54") {
 
+
     if(isset($_POST['news_letter_email'])){
         $sql_newsletter_mails = "SELECT * FROM `subscribed` ORDER BY `subscribed`.`id` DESC";
         $sql_newsletter_mails = mysqli_query($connect, $sql_newsletter_mails);
@@ -130,7 +131,24 @@ if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == "45646546545sd4
 }
 
 
+if(isset($_POST['book_a_table_now'])){
+    $book_date = addslashes(strip_tags(strtolower($_POST['book_date'])));
+    $book_time = addslashes(strip_tags(strtolower($_POST['book_time'])));
+    $book_name = addslashes(strip_tags(ucwords(strtolower($_POST['book_name']))));
+    $book_email = addslashes(strip_tags(strtolower($_POST['book_email'])));
+    $book_phone = addslashes(strip_tags(strtolower($_POST['book_phone'])));
+    $book_person_count = addslashes(strip_tags(strtolower($_POST['book_person_count'])));
+    if(mysqli_query($connect, "INSERT INTO `table_boos` (`id`, `book_email`, `book_phone`, `book_name`, `book_time`, `book_date`, `book_person_count`, `time`, `ip`, `user-agent`) VALUES (NULL, '$book_email', '$book_phone', '$book_name', '$book_time', '$book_date', '$book_person_count', '$time', '$ip', '$user_agent')")){
+        $booking_email = "Your booking is successfull. Thanks for choosing us. </br> Date: $book_date </br> Time: $book_time </br> Booked for: $book_person_count person </br> ... </br> We will contact with you over $book_phone.";
+        sent_mail($book_email, $book_name, $booking_email, "Booking Confirmation");
+        $result['book_a_table_now'] = true;
+        header("Location: /book-table?booking=true");
+    }else{
+        $result['book_a_table_now'] = false;
+        header("Location: /book-table?booking=false");
+    }
 
+}
 
 
 if(isset($_POST['newsletter_subscription'])){

@@ -69,6 +69,16 @@ if (!isset($result)) {
 	
 	<div class="settings_item">
 		<div class="settings_title">
+			Change Opening time as notes to customer:
+		</div>
+		<div>
+			<input type="text" onchange="change_text_settings(this, 'div.open', 'open')" class="change_text" value="<?php echo $result['open']; ?>">
+		</div>
+		<div class="open result_change_text"></div>
+	</div>
+	
+	<div class="settings_item">
+		<div class="settings_title">
 			Change Resturant Est. year:
 		</div>
 		<div>

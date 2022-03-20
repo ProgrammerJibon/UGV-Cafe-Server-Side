@@ -20,6 +20,12 @@
                             ?>
                         </span>
                     </div>
+                    <div class="contact-mel">
+                        <i class="fas fa-clock"></i>
+                        <span>
+                            <?php echo $info['open'];?>
+                        </span>
+                    </div>
                     <br>
                     <div class="contact-mel">
                         <i class="fas fa-phone"></i> 
@@ -41,22 +47,58 @@
                     <span>BOOK A TABLE</span>
                 </div>
                 <div>
-                    <form action="/save" method="POST">
+                    <form action="/json.php" method="POST">
+                        <?php
+                        if (isset($_GET['booking'])) {
+                            if ($_GET['booking'] == "true") {
+                                echo '
+                                <div>
+                                    <h2 style="max-width: 100%;">
+                                        <font color="green">
+                                            Your booking is confirmed.</br> Check your email please.
+                                        </font>
+                                    </h2>
+                                </div>
+                                ';
+                            }else{
+                                echo '
+                                <div>
+                                    <h2 style="max-width: 100%;">
+                                        <font color="red">
+                                            Something went wronge.</br>Please try again letter.
+                                        </font>
+                                    </h2>
+                                </div>
+                                ';
+                            }
+                        }
+                        ?>
                         <div>
-                            <input type="date" value="<?php echo date('Y-m-d'); ?>" name="book-date">
+                            <input required type="date" value="<?php echo date('Y-m-d'); ?>" name="book_date">
                         </div>
                         <div>
-                            <input type="time" value="<?php echo date('h:i'); ?>" name="book-time">
+                            <input required type="time" value="<?php echo date('h:i'); ?>" name="book_time">
                         </div>
-                        <select name="book-table-number">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                        <div>
+                            <input required type="text" placeholder="Full Name" name="book_name">
+                        </div>
+                        <div>
+                            <input required type="email" placeholder="Email Address" name="book_email">
+                        </div>
+                        <div>
+                            <input required type="phone" placeholder="Phone Number" name="book_phone">
+                        </div>
+                        <select name="book_person_count" id="book_table_number">
+                            <option value="1" selected>1 Person</option>
                         </select>
+                        <script>
+                            var book_table_number = document.querySelector("select#book_table_number");
+                            for (var i = 2; i <= 100; i++) {
+                                book_table_number.innerHTML += `<option value="${i}">${i} Person</option>`;
+                            }
+                        </script>
                         <div>
-                            <button type="submit">
+                            <button type="submit" name="book_a_table_now">
                                 <span>Book Table</span>
                             </button>
                         </div>
