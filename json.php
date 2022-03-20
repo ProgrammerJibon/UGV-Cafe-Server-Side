@@ -7,6 +7,23 @@ $result = array();
 
 if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == "45646546545sd45f64sa65d45ds4f564sad5f45a315sd4f564as521dc451fs5d1f564asdf564as5df15ew64r54") {
 
+    if(isset($_POST['news_letter_email'])){
+        $sql_newsletter_mails = "SELECT * FROM `subscribed` ORDER BY `subscribed`.`id` DESC";
+        $sql_newsletter_mails = mysqli_query($connect, $sql_newsletter_mails);
+        foreach ($sql_newsletter_mails as $sql_newsletter_mail) {
+            sent_mail($sql_newsletter_mail['email'], "", addslashes($_POST['news_letter_email']), addslashes($_POST['news_letter_title']));
+        }
+        header("Location: /admin?p=5&sent=".addslashes($_POST['news_letter_title']));
+    }
+
+    if(isset($_POST['delete_newsletter_email'])){
+        if(mysqli_query($connect, "DELETE FROM `subscribed` WHERE `subscribed`.`id` = '$_POST[delete_newsletter_email]'")){
+            header("Location: /admin?p=5");
+        }else{
+            $result['add_menu_item']['error'] = mysqli_error($connect);
+        }
+    }
+
     if(isset($_POST['add_menu_item']) && isset($_FILES['cover'])){
         if($_FILES['cover']['size'] > 0){
             $cover_path = upload($_FILES['cover']['tmp_name'], 'image');

@@ -621,7 +621,9 @@ function checkPathName(path){
 
 
 function newsletterSubscription1(input, button){
+	button.disabled = true;
 	loadLink('/json.php', [['newsletter_subscription',input.value],['bool','false']]).then(result=>{
 		button.innerHTML = result.newsletter_subscription;
+		input.innerHTML = "";
 	});
 }

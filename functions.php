@@ -94,18 +94,19 @@ function upload($tmp_file, $type = false){
 
 
 function sent_mail($to = null, $fname = null, $message = null, $subject = null, $reply_to_this = null){
+	global $info;
 	$fname = ucwords(strtolower(addslashes($fname)));
 	$to = (strtolower(addslashes(strip_tags($to))));
 	
 
-	$website_title = $_SESSION['site_name'];
+	$website_title = $info['title'];
 	$website_url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME'];
 	if ($reply_to_this != null) {
 		$web_mail = $reply_to_this;
 	}else{
 		$web_mail = "no-reply@lemarbuchladen.de";
 	}	
-	$logo = "https://www.lemarbuchladen.de/cdn/logo.png";
+	$logo = "https://www.kjibon.com/wp-content/uploads/2022/03/logo2-150x150.png";
 
 	if ($subject == null) {
 		$subject = "Notification from $website_title";
