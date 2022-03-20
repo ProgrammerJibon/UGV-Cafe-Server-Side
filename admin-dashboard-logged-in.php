@@ -34,18 +34,28 @@ require_once 'page-header.php';
 }
 ?>
 <div class="admin_page">
-	<div class="home_page_logo"><div onclick="href('/admin')" class="home_top_logo"><img src="<?php echo $result['logo']; ?>"></div></div>
-	<div class="menu_bar">
-		<div class="menu_item" <?php if($_GET['p'] == 0){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=0')\"";} ?>>Table Books</div>
-		<div class="menu_item" <?php if($_GET['p'] == 2){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=2')\"";} ?>>Social Url</div>
-		<div class="menu_item" <?php if($_GET['p'] == 3){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=3')\"";} ?>>General Settings</div>
-		<div class="menu_item" <?php if($_GET['p'] == 5){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=5')\"";} ?>>Newsletter Emails</div>
-		<div class="menu_item" <?php if($_GET['p'] == 1){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=1')\"";} ?>>Menus</div>
-		<!-- <div class="menu_item" <?php if($_GET['p'] == 4){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=4')\"";} ?>>Posts</div> -->
-		<form class="menu_item" method="POST" style="padding: 0;"><input type="submit" class="menu_item" name="logout" value="LOGOUT" style="color: white; background: red; border: 0; margin: 0;"></form>
-	</div>
-	<div class="admin_settings">
-		<?php 
+    <div class="menu_bar">
+        <div class="menu_item"
+            <?php if($_GET['p'] == 0){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=0')\"";} ?>>
+            Table Books</div>
+        <div class="menu_item"
+            <?php if($_GET['p'] == 2){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=2')\"";} ?>>
+            Social Url</div>
+        <div class="menu_item"
+            <?php if($_GET['p'] == 3){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=3')\"";} ?>>
+            General Settings</div>
+        <div class="menu_item"
+            <?php if($_GET['p'] == 5){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=5')\"";} ?>>
+            Newsletter Emails</div>
+        <div class="menu_item"
+            <?php if($_GET['p'] == 1){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=1')\"";} ?>>
+            Menus</div>
+        <!-- <div class="menu_item" <?php if($_GET['p'] == 4){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=4')\"";} ?>>Posts</div> -->
+        <form class="menu_item" method="POST" style="padding: 0;"><input type="submit" class="menu_item" name="logout"
+                value="LOGOUT" style="color: white; background: red; border: 0; margin: 0;"></form>
+    </div>
+    <div class="admin_settings">
+        <?php 
 			if ($_GET['p'] == 2) {
 				require_once 'admin-social-media.php';
 			}elseif ($_GET['p'] == 3) {
@@ -58,6 +68,6 @@ require_once 'page-header.php';
 				require_once 'admin-table-books.php';
 			}
 		 ?>
-	</div>
+    </div>
 </div>
 <?php require 'page-footer.php'; ?>
