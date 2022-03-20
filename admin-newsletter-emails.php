@@ -4,6 +4,13 @@ $sql = mysqli_query($connect, $sql);
 ?>
 <div style="max-width: 600px; margin: 64px auto;">
 	<form action="/json.php" method="POST">
+		<div>
+			<h3>
+				<span style="color: white;">
+					Sent mail to all email...
+				</span>
+			</h3>
+		</div>
 		<div style="color: white;">
 			<?php 
 				if (isset($_GET['sent'])) {
