@@ -41,7 +41,7 @@ require_once 'page-header.php';
 		<div class="menu_item" <?php if($_GET['p'] == 3){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=3')\"";} ?>>General Settings</div>
 		<div class="menu_item" <?php if($_GET['p'] == 5){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=5')\"";} ?>>Newsletter Emails</div>
 		<div class="menu_item" <?php if($_GET['p'] == 1){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=1')\"";} ?>>Menus</div>
-		<div class="menu_item" <?php if($_GET['p'] == 4){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=4')\"";} ?>>Posts</div>
+		<!-- <div class="menu_item" <?php if($_GET['p'] == 4){echo "style='background:  #acacac; color: white;'";}else{echo " onclick=\"href('?p=4')\"";} ?>>Posts</div> -->
 		<form method="POST"><input type="submit" class="menu_item" name="logout" value="LOGOUT" style="color: red; background: white; border: 0;"></form>
 	</div>
 	<div class="admin_settings">

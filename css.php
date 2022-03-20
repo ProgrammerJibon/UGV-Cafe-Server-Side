@@ -489,6 +489,7 @@ table tr:nth-child(even) {
     background: var(--optional-2);
     margin: 0 -32px;
     box-shadow: 5px 5px 15px -5px grey;
+    flex-wrap: wrap;
 }
 .admin_page .menu_bar .menu_item:hover{
 	background: #ff0052;
@@ -505,6 +506,7 @@ table tr:nth-child(even) {
     cursor: pointer;
     width: 100%;
     text-align: center;
+    flex: 14.28%;
 }
 
 
@@ -513,7 +515,7 @@ table tr:nth-child(even) {
 
 .settings_main{
 	padding: 64px 0;
-	max-width: 500px;
+	max-width: 600px;
 	margin: 0 auto;
 }
 .settings_main .settings_item{
@@ -558,11 +560,55 @@ table tr:nth-child(even) {
     display: flex;
 }
 .admin_cat_list .admin_cat_item input[type='text']{
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
 }
-
-
+.admin_menus_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 612px;
+}
+.admin_menus_list .menu-list-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: center;
+    margin-bottom: 32px;
+    max-width: 300px;
+}
+.admin_menus_list .menu-list-row input,.admin_menus_list .menu-list-row select,.admin_menus_list .menu-list-row button{
+    width: 100%;
+}
+.admin_menus_list .menu-list-row .menu-name-comment-price .menu-comment{
+    font-size: 14px;
+    opacity: 0.8;
+}
+.admin_menus_list .menu-list-row .menu-name-comment-price .menu-name{
+    font-size: 18px;
+}
+.admin_menus_list .menu-list-row .menu-name-comment-price {
+    color: var(--primary);
+    padding-left: 8px;
+}
+.admin_menus_list .menu-list-row .menu-action-btn{
+    display: flex;
+}
+.admin_menus_list .menu-list-row .menu-img{
+    width: 100%;
+    height: 100px;
+}
+.admin_menus_list .menu-list-row .menu-action-btn button{
+    flex: 100%;
+}
+.add-menu-item {
+    margin: 32px  0;
+}
+.add-menu-item input, .add-menu-item select, .add-menu-item button{
+    width: 100%;
+}
 
 
 /*****************************************************************************************/
@@ -795,11 +841,11 @@ table tr:nth-child(even) {
 input, select, button {
     width: 300px;
     margin: 8px 0;
-    height: 40px;
     background: transparent;
     color: var(--primary);
     border: 1.5px solid var(--primary);
-    padding: 0 32px;
+    padding: 12px 32px;
+    font-size: 14px;
     color-scheme: dark;
 }
 input:hover, select:hover, input:focus, select:focus{

@@ -7,7 +7,37 @@ $result = array();
 
 if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == "45646546545sd45f64sa65d45ds4f564sad5f45a315sd4f564as521dc451fs5d1f564asdf564as5df15ew64r54") {
 
+    if(isset($_POST['add_menu_item']) && isset($_FILES['cover'])){
+        if($_FILES['cover']['size'] > 0){
+            $cover_path = upload($_FILES['cover']['tmp_name'], 'image');
+        }
+        if(isset($cover_path) && mysqli_query($connect, "INSERT INTO `menu_items` (`id`, `name`, `pic`, `menu_cats_id`, `price`, `comment`, `time`) VALUES (NULL, '$_POST[name]', '$cover_path', '$_POST[cat]', '$_POST[price]', '$_POST[comment]', '$time')")){
+            header("Location: /admin?p=1&cat=$_POST[cat]");
+        }else{
+            if(!isset($cover_path)){
+                $result['add_menu_item']['error'] = "Select a correct image file";
+            }else{
+                $result['add_menu_item']['error'] = mysqli_error($connect);
+            }
+        }
+    }
 
+    if (isset($_POST['update_menu_item'])) {
+        $menu_item_cover = "";
+        if(isset($_FILES['cover']) && $_FILES['cover']['size'] > 0){
+            if($menu_item_cover = upload($_FILES['cover']['tmp_name'])){
+                $menu_item_cover = ", `pic` = '$menu_item_cover'";
+            }
+            $result['file'] = $_FILES;
+        }
+        $_POST['cat'] = (int) $_POST['cat'];
+        if($menu_update_query = mysqli_query($connect, "UPDATE `menu_items` SET `name` = '$_POST[name]' $menu_item_cover , `price` = '$_POST[price]', `comment` = '$_POST[comment] ', `menu_cats_id` = '$_POST[cat]', `time` = '$time' WHERE `menu_items`.`id` = '$_POST[update_menu_item]'")){
+            header("Location: /admin?p=1&cat=$_POST[cat]");
+        }else{
+            $result['update_menu_item']['error'] = "Try again letter";
+        }
+        $result['update_menu_item'] = $_POST;
+    }
 
     if(isset($_POST['add_cat_name'])){
         if(strlen($_POST['add_cat_name']) > 0 && mysqli_query($connect, "INSERT INTO `menu_cats` (`id`, `name`, `pic`, `time`) VALUES (NULL, '$_POST[add_cat_name]', '', '$time')")){
